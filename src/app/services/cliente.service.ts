@@ -4,7 +4,7 @@ import { Cliente } from '../models/cliente.model';
 import { Observable } from 'rxjs';
 
 
-const baseURL="http://localhost:8091/cliente";
+const baseURL="https://decorous-control-production.up.railway.app/cliente";
 @Injectable({
   providedIn: 'root'
 })

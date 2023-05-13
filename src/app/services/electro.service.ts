@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Electro } from '../models/electro.model';
 
 
-const baseURL="http://localhost:8091/electro";
+const baseURL="https://decorous-control-production.up.railway.app/electro";
 @Injectable({
   providedIn: 'root'
 })

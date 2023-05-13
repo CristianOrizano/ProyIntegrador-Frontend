@@ -4,7 +4,7 @@ import { Carro } from '../models/carro.model';
 import { HttpClient } from '@angular/common/http';
 
 
-const baseURL="http://localhost:8091/boleta";
+const baseURL="https://decorous-control-production.up.railway.app/boleta";
 @Injectable({
   providedIn: 'root'
 })
