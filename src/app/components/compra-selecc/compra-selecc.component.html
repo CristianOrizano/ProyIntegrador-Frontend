@@ -1,0 +1,74 @@
+
+<div class="container">
+    <br><br>
+      <!-- BASIC FORM ELELEMNTS -->
+  <div style="padding: 20px;">	
+<h3 class="text-center" style="color: white;background: black;padding: 15px;">{{idproducto}}</h3>	  
+  
+<!-- form -->
+<div class="container  ">
+<div class="row justify-content-center" style="margin-top: 10%">
+    <div class="col-sm-12 col-md-11 col-lg-11 col-xl-7"
+        style="background: white; border: solid; box-shadow: yellow 10px 5px 35px;">
+        <h2 style="text-align: center; color: #aa6d7d">Detalle compra</h2>
+    
+        <table>
+            <tr>
+                <td><img alt="" class="img-fluid" src='assets/Producto/{{compra.codigoele}}.PNG' width="365px" height="375px"></td>
+                <td style="padding: 30px">
+                    <h4 style="color: #045FB4;">{{compra.cate?.nombre}}</h4>
+            
+                    <hr>
+                    <h2 style="color: green">{{compra.descripcion}}</h2>
+                    <form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h5>Marca :</h5>
+                                </td>
+                                <td>
+                                    <h3 style="color: #585858"></h3>{{compra.marca}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Precio:</h5>
+                                </td>
+                                <td>
+                                    <h4>{{compra.precio}}</h4>
+                                </td>
+            
+            
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Cantidad:</h5>
+                                </td>
+                                <td><input  [(ngModel)]="cantidad"  type="number" value="1" name="cantidad" min="1" max="10"></td>
+                            </tr>
+            
+                        </table>
+            
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary " (click)="addtocart()" >Agregar
+                                compra</button>
+                        </div>
+                    </form>
+                    <hr>
+            
+            
+                </td>
+            
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+</div>
+
+
+</div>
+  
+</div>	
+

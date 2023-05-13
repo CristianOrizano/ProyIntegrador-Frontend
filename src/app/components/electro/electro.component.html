@@ -1,0 +1,284 @@
+<div class="container-fluid px-4">
+
+    <div class="row">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2><i class="fas fa-table me-1"></i>Electrodomesticos </h2>
+            </div>
+
+            <div class="card-body">
+
+
+                <!-- Button modal -->
+                <button (click)="LimpiarInput()" type="button" class="btn btn-primary btn-registrar" data-bs-toggle="modal" data-bs-target="#registrar">
+                    Registrar
+                </button>
+
+
+                <!-- Modal registrar-->
+                <div class="modal fade" id="registrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content Tay">
+                            <div class="modal-header" style="background-color: rgb(179, 22, 75);color: aliceblue;">
+                                <h5 class="modal-title" id="exampleModalLabel">Mantenimiento Administrador</h5>
+                                <button type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" >
+                
+                
+                                <form (ngSubmit)="RegistrarElectro()" #form="ngForm" >
+                                    <div class="row mb-3">
+                                        <div class="col-sm-12 col-md-6 col-lg-4">
+                
+                                            <label for="formGroupExampleInput" class="form-label">Descripcion</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-solid fa-user"></i></span>
+                                                <input type="text"  #descripcion="ngModel" name="descripcion" id="descripcion" [(ngModel)]="electro.descripcion"
+                                                    class="form-control" placeholder="Ingrese Nombre" minlength="4"maxlength="20" required>                                                                                        
+                                            </div>
+                                            <div *ngIf="descripcion.touched && !descripcion.valid">                                                     
+                                                <div style="color: red;" *ngIf="descripcion.errors?.['required']"> El Descripcion es obligatorio</div>
+                                                <div style="color: red;" *ngIf="descripcion.errors?.['minlength']"> Min:4 Max:20 caracteres </div>
+             
+                                            </div> 
+
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Categoria</label>
+                                            <select class="form-select form-control"  #Ciudad="ngModel" id="ciudad"
+                                                [(ngModel)]="electro.cate!.codigocate"  name="txtciudad">                                           
+                                                <option *ngFor="let aux of liscate" value="{{aux.codigocate}}">
+                                                    {{aux.nombre}}
+                                                </option>
+
+                                            </select>
+                                        
+
+                                        </div>
+                                   
+                
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Marca</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-regular fa-diamond-turn-right"></i></span>
+                                                <input type="text" #Direccion="ngModel" name="Direccion" id="Direccion" [(ngModel)]="electro.marca"
+                                                    class="form-control" placeholder="Ingrese Direccion" minlength="2" maxlength="20" required>
+                                            </div>
+                                            <div *ngIf="Direccion.touched && !Direccion.valid">                                                     
+                                                <div style="color: red;" *ngIf="Direccion.errors?.['required']"> La Marca es obligatorio</div>
+                                                <div style="color: red;" *ngIf="Direccion.errors?.['minlength']"> Min:4 Max:20 caracteres </div>
+             
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Stock</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-solid fa-phone"></i></span>
+                                                <input type="number" #Telefono="ngModel" name="telefono" id="telefono" [(ngModel)]="electro.stock"
+                                                    class="form-control" placeholder="Ingrese Telefono" min="30" max="50"  required>
+                                            </div>
+                                            <div *ngIf="Telefono.touched && !Telefono.valid">                                                     
+                                                <div style="color: red;" *ngIf="Telefono.errors?.['required']"> El Stock es obligatorio</div>
+                                                <div style="color: red;" *ngIf="Telefono.errors?.['min']"> Cantidad min:30, max:50  </div>
+             
+                                            </div> 
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Precio</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-solid fa-money-bill"></i> </span>
+                                                <input type="number"  #Sueldo="ngModel" name="sueldo" id="sueldo" [(ngModel)]="electro.precio"
+                                                    class="form-control" placeholder="Ingrese Sueldo" min="1000" required>
+                                            </div>
+                                            <div *ngIf="Sueldo.touched && !Sueldo.valid">                                                     
+                                                <div style="color: red;" *ngIf="Sueldo.errors?.['required']"> El Precio es obligatorio</div>
+                                                <div style="color: red;" *ngIf="Sueldo.errors?.['min']"> Minimo S/1000 </div>
+             
+                                            </div>  
+                                        </div>
+                                      
+                                    </div>
+                                    
+                
+                
+                                    <div class="modal-footer" >
+                                        <button [disabled]="form.invalid" id="cerrar" data-bs-dismiss="modal" class="btn btn-primary">Registrar</button>
+                                        <button type="button" class="btn btn-secondary" id="cerrar"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                
+                                    </div>
+                                </form>
+                
+                            </div>
+                
+                
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Modal actualizar -->
+                <div class="modal fade" id="actualizar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content Tay">
+                            <div class="modal-header" style="background-color: rgb(179, 22, 75);color: aliceblue;">
+                                <h5 class="modal-title" id="exampleModalLabel">Mantenimiento Administrador</h5>
+                                <button (click)="Cerrar()"  type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <form (ngSubmit)="ActualizarAdmin()" #form="ngForm">
+                                    <div class="row mb-3">
+                                        <div class="col-sm-12 col-md-6 col-lg-4">
+                
+                                            <label for="formGroupExampleInput" class="form-label">Descripcion</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-solid fa-user"></i></span>
+                                                <input type="text"  #descripcion="ngModel" name="descripcion" id="descripcion" [(ngModel)]="electro.descripcion"
+                                                    class="form-control" placeholder="Ingrese Nombre" minlength="4"maxlength="20" required>                                                                                        
+                                            </div>
+                                            <div *ngIf="descripcion.touched && !descripcion.valid">                                                     
+                                                <div style="color: red;" *ngIf="descripcion.errors?.['required']"> El Descripcion es obligatorio</div>
+                                                <div style="color: red;" *ngIf="descripcion.errors?.['minlength']"> Min:4 Max:20 caracteres </div>
+             
+                                            </div> 
+
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Categoria</label>
+                                            <select class="form-select form-control"  #Ciudad="ngModel" id="ciudad"
+                                                [(ngModel)]="electro.cate!.codigocate"  name="txtciudad">                                           
+                                                <option *ngFor="let aux of liscate" value="{{aux.codigocate}}">
+                                                    {{aux.nombre}}
+                                                </option>
+
+                                            </select>
+                                        
+
+                                        </div>
+                                   
+                
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Marca</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-regular fa-diamond-turn-right"></i></span>
+                                                <input type="text" #Direccion="ngModel" name="Direccion" id="Direccion" [(ngModel)]="electro.marca"
+                                                    class="form-control" placeholder="Ingrese Direccion" minlength="2" maxlength="20" required>
+                                            </div>
+                                            <div *ngIf="Direccion.touched && !Direccion.valid">                                                     
+                                                <div style="color: red;" *ngIf="Direccion.errors?.['required']"> La Marca es obligatorio</div>
+                                                <div style="color: red;" *ngIf="Direccion.errors?.['minlength']"> Min:4 Max:20 caracteres </div>
+             
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Stock</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-solid fa-phone"></i></span>
+                                                <input type="number" #Telefono="ngModel" name="telefono" id="telefono" [(ngModel)]="electro.stock"
+                                                    class="form-control" placeholder="Ingrese Telefono" min="30" max="50"  required>
+                                            </div>
+                                            <div *ngIf="Telefono.touched && !Telefono.valid">                                                     
+                                                <div style="color: red;" *ngIf="Telefono.errors?.['required']"> El Stock es obligatorio</div>
+                                                <div style="color: red;" *ngIf="Telefono.errors?.['min']"> Cantidad min:30, max:50  </div>
+             
+                                            </div> 
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                                            <label for="formGroupExampleInput" class="form-label">Precio</label>
+                                            <div class="input-group ">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fa-sharp fa-solid fa-money-bill"></i> </span>
+                                                <input type="number"  #Sueldo="ngModel" name="sueldo" id="sueldo" [(ngModel)]="electro.precio"
+                                                    class="form-control" placeholder="Ingrese Sueldo" min="1000" required>
+                                            </div>
+                                            <div *ngIf="Sueldo.touched && !Sueldo.valid">                                                     
+                                                <div style="color: red;" *ngIf="Sueldo.errors?.['required']"> El Precio es obligatorio</div>
+                                                <div style="color: red;" *ngIf="Sueldo.errors?.['min']"> Minimo S/1000 </div>
+             
+                                            </div>  
+                                        </div>
+                                      
+                                    </div>
+                                    
+
+                                    <div class="modal-footer">
+                                        <button type="submit"  [disabled]="form.invalid" id="cerrar" data-bs-dismiss="modal" class="btn btn-success btn-reg">actualizar</button>
+                                        <button (click)="Cerrar()" type="button" class="btn btn-secondary" id="cerrar"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                    
+                                    </div>
+                                </form>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="mt-3">
+                    <div class="table-responsive">
+                    <table class="row-border hover table-bordered  table table-dark table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Código</th>
+                                <th>Descripcion</th>
+                                <th>Stock</th>
+                                <th>Precio</th>
+                                <th>Categoria</th>
+                                <th>Marca</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let a of liselec | paginate: { itemsPerPage: 10, currentPage: page}">
+                                <td>{{a.codigoele}}</td>
+                                <td>{{a.descripcion}}</td>
+                                <td>{{a.stock}}</td>
+                                <td>S/. {{a.precio}}</td>
+                                <td>{{a.cate?.nombre}}</td>
+                                <td>{{a.marca}}</td>                            
+                                <td>
+                                    <a class="btn btn-warning editar" data-bs-toggle="modal"
+                                        data-bs-target="#actualizar" (click)="Buscar(a)">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square"></i>Edit</a>
+                                </td>
+                                <td>
+                                    <button (click)="Eliminar(a)" class="btn btn-danger btn-eliminar"><i
+                                            class="fa-sharp fa-solid fa-trash-can"></i>Delete</button>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>

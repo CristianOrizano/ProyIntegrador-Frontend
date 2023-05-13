@@ -1,0 +1,195 @@
+
+<div class="container-fluid px-4 ">
+
+    <div class="row ggwel">
+        <div class="card mb-4 ggwel">
+            
+<div class="container ">
+    <ng-container *ngIf="products.length !=0">
+      <!-- BASIC FORM ELELEMNTS -->
+  <div style="padding: 20px;">	
+<h3 class="text-center" style="color: white;background: #0C2E43;padding: 15px;border:solid 5px white">Venta Electrodomesticos</h3>	  
+      
+      <div class="row justify-content-evenly  mt-2">
+
+<div class="nini col-sm-12 col-md-12 col-lg-7 col-xl-7" style="padding:15px;border:solid 12px #F7BE81">
+        <div class="row g-3">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <h1 style="color: WHite">Datos del Cliente</h1>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <form action="/electro/BuscarCliente" method="post">					
+                    <button type="submit" class="btn btn-danger">
+                        Buscar Cliente
+                    </button>
+                     </form>
+            </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="form-group">
+                   <label for="validationCustom02" class="form-label">Codigo</label>
+                        <input type="text"  #codigo="ngModel" name="codigoo" id="descripcion" [(ngModel)]="objcliente.codigo" class="form-control" placeholder=""
+                      aria-label="First name">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="form-group">
+                    <label for="validationCustom02" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" placeholder=""
+                         th:value="${cli.nombre}"	aria-label="First name">
+            </div>
+        </div>
+           
+         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="form-group">
+                    <label for="validationCustom02" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" placeholder=""
+                         th:value="${cli.apellido}"	aria-label="First name">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="form-group">
+                    <label for="validationCustom02" class="form-label">DNI</label>
+                        <input type="text" class="form-control" placeholder=""
+                        th:value="${cli.dni}"	aria-label="First name">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="form-group">
+                    <label for="validationCustom02" class="form-label">Sexo</label>
+                        <input type="text" class="form-control" placeholder=""
+                         th:value="${cli.sexo}"	aria-label="First name">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+            <div class="form-group">
+                   <label for="validationCustom02" class="form-label">Fecha Nacimiento</label>
+                        <input type="text" class="form-control" placeholder=""
+                         th:value="${cli.fecha}"	aria-label="First name">
+            </div>
+        </div>
+    </div>
+
+        
+</div>
+
+<div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" style="background:#FF5B56;height: 400px;padding:5px">
+    <div style="background: black;padding: 10px">
+        <h3 style="color:white">Resumen </h3>
+        <hr>
+        <table class="table">
+            <tr>
+                <th><h6>cantidad Articulos:</h6></th>
+
+                <th ><h5>{{cantTotal}}</h5></th>
+            </tr>
+            <tr>
+                <th>
+                    <h6>IGV :</h6>
+                </th>
+                <td style="color:white">
+                    S/. 0.0
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h6>Sub total :</h6>
+                </th>
+                <td style="color:white" >
+                  <h6 >
+                   S/. {{grandTotal}}
+                       
+                    </h6>
+                </td>
+            </tr>
+            <tr>
+                <th><h4>Total</h4></th>
+                <th>
+                    <h5 >
+                        S/. {{grandTotal}}.00
+                    </h5>
+                </th>
+            </tr>
+
+        </table>
+        <br> <br>   
+        
+         <form action="/electro/InsertarBoleta" method="post">
+               
+              <input name="codicli" th:value="${cli.codigo}" type="hidden">
+               
+            <div class="d-grid gap-2">
+                <button  (click)="procesarfinalizar()" type="submit" class="btn btn-primary">
+                    Procesar compra
+                </button>
+            </div>
+        </form>
+
+       
+    </div>
+</div>        
+</div>
+   <div class="row justify-content-center mt-3">
+<div class="col-sm-12 col-md-12 col-lg-12" style="background: #1E86C9;border:solid 5px white ">
+    <div  style="padding: 10px;height: 500px; overflow-y: auto;">
+        <table  class="table table-dark table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Importe</th>
+                    <th></th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of products; let i = index">
+                    <td><img src='assets/Producto/{{item.codigopro}}.PNG'
+                           width="150px"
+                                height="150px"></td>
+                
+                    <td >{{item.descripcion}}</td>
+                    <td >{{item.precio}}</td>
+                    <td >{{item.cantidad}}</td>
+                    <td >{{item.importe}}</td>
+                    <td>
+                    <form  method="post">
+                        
+                        
+                        <button type="submit" class="btn btn-danger">
+                        Eliminar
+                        </button>
+                    </form>
+                    
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        </div>
+</div>
+</div>
+
+</ng-container>
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+       
+        <div class="center">
+           
+           
+            <h6>El carrito de compras esta vacio en este momento</h6>
+            
+        </div>
+    </div>
+</ng-container>
+
+</div>
+
+
+</div>
+</div>
+</div>

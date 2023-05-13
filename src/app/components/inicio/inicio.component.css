@@ -1,0 +1,80 @@
+.help-block {
+    color: red;
+}
+
+
+.form-group.has-error .form-control {
+    border: 1px solid red;
+    box-shadow: 0 0 0 0.2rem rgba(250, 16, 0, 0.18);
+}
+.en1 {
+    width: 350px;
+    height: 600px;
+
+    display: inline-block;
+    margin: 30px;
+}
+
+.en2 {
+    width: 350px;
+    height: 600px;
+
+    display: inline-block;
+}
+
+.en3 {
+    width: 350px;
+    height: 600px;
+
+    display: inline-block;
+    margin: 30px;
+}
+
+.ce {
+    text-align: center;
+    background: #088A85;
+    color: white;
+    padding: 15px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.p {
+    margin: 8px;
+    text-align: left;
+
+}
+
+.sub {
+    text-decoration: none;
+    font-size: 25px;
+    color: red;
+
+}
+
+.li {
+    text-decoration: none;
+    color: white;
+    background: black;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.lis {
+    background: yellow;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    border: solid;
+}
+
+.con2 {
+    background: pink;
+    width: 255px;
+    float: left;
+}
+

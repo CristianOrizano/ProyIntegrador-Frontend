@@ -1,0 +1,96 @@
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" >
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" >Start Bootstrap</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" ><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search sdf-->
+    
+    <!-- Navbar-->
+  
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav" style="border-right: solid 10px #5499C7;">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu" style="background: #053B4C">
+                <div class="nav">
+                <div class="sb-sidenav-menu-heading" style="color: #43D9F4;" >Principal</div>
+                    <a routerLink="/inicio/" style="color: #CACFD2;  font-family: cursive" class="nav-link" >
+                        <div class="sb-nav-link-icon"> <i style="color: #D7DBDD;  font-size: 25px;" class="fa-sharp fa-solid fa-house"></i></div>
+                        Inicio
+                    </a>
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Mantenimiento</div>
+                    <a class="nav-link collapsed" style="color: #CACFD2; font-family: cursive" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;"  class="fas fa-columns"></i></div>
+                        Datos
+                        <div class="sb-sidenav-collapse-arrow"><i style="color: #D7DBDD; font-size: 25px;" class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link"  style="color: #CACFD2; font-family: cursive" routerLink="/inicio/electro">
+                                <div class="sb-nav-link-icon"> 
+                                    <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-user"></i>  </div>
+                                Producto
+                            </a>
+                            <a class="nav-link"  style="color: #CACFD2; font-family: cursive" routerLink="/inicio/cliente">
+                                <div class="sb-nav-link-icon"> 
+                                    <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-user"></i>  </div>
+                               Clientes
+                            </a>
+                            <a class="nav-link"  style="color: #CACFD2; font-family: cursive" routerLink="/inicio/proveedor">
+                                <div class="sb-nav-link-icon"> 
+                                    <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-user"></i>  </div>
+                               Proveedor
+                            </a>
+                           
+                        </nav>
+                    </div>
+          
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Catalogo</div>
+                    <a routerLink="/inicio/catalogo"style="color: #CACFD2; font-family: cursive" class="nav-link" >
+                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;"class="fa-sharp fa-solid fa-image"></i></div>
+                        Electro catalogo
+                    </a>
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Carro</div>
+                    <a routerLink="/inicio/carro" 
+                    style="color: #CACFD2; font-family: cursive" class="nav-link" >
+                        <div class="sb-nav-link-icon"> <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-cart-shopping"></i>  </div>
+                        Carro Compra
+                    </a>
+                     
+                  
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Historial</div>
+                    <a class="nav-link" style="color: #CACFD2; font-family: cursive">
+                        <div class="sb-nav-link-icon"> <i  style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-list-ol"></i></div>
+                        Ventas Realizadas
+                    </a>
+  
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Sesion</div>
+                    <a routerLink="/login"  class="nav-link" style="color: #CACFD2; font-family: cursive">
+                        <div class="sb-nav-link-icon"><i  style="color: #D7DBDD; font-size: 25px;"class="fa-sharp fa-solid fa-right-from-bracket"></i></div>
+                        Cerrar 
+                    </a>
+
+                   
+                   
+                    
+                </div>
+            </div>
+            <div class="sb-sidenav-footer">
+                <div class="small">Logged in as:</div>
+                Start Bootstrap
+            </div>
+        </nav>
+    </div>
+  
+    <div id="layoutSidenav_content">
+        <main>
+
+            <router-outlet></router-outlet>
+        </main>
+      
+    </div>
+  </div>
+  
+  
+  <!--stilos plantilla -->
+    <script href="assets/js/script"></script>
