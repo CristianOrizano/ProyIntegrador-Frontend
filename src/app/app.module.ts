@@ -18,6 +18,7 @@ import { ProveedorComponent } from './components/proveedor/proveedor.component';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { CompraSeleccComponent } from './components/compra-selecc/compra-selecc.component';
 import { CarroComponent } from './components/carro/carro.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CarroComponent } from './components/carro/carro.component';
     ProveedorComponent,
     CatalogoComponent,
     CompraSeleccComponent,
-    CarroComponent
+    CarroComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,

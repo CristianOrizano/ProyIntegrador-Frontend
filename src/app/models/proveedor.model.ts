@@ -1,3 +1,4 @@
+import { Electro } from "./electro.model";
 import { Estado } from "./estado.model";
 
 export class Proveedor {
@@ -15,4 +16,10 @@ export class Proveedor {
     descripcion?:string;
 
     estado?:Estado;
+
+    elec?:Electro;
+
+    cantidad?:number;
+
+
 }

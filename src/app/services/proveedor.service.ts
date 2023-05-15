@@ -6,6 +6,7 @@ import { Proveedor } from '../models/proveedor.model';
 
 const baseURL="https://decorous-control-production.up.railway.app/proveedor";
 
+
 @Injectable({
   providedIn: 'root'
 })

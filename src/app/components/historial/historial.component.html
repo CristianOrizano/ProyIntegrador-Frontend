@@ -1,0 +1,111 @@
+
+<div class="modal fade" id="registrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content Tay">
+        <div class="modal-header" style="background-color: rgb(239, 85, 85);color: aliceblue;">
+            <h5 class="modal-title" id="exampleModalLabel">Detalle de Venta</h5>
+            <button type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+
+
+            <div class="mt-3">
+                <table class="row-border hover table-bordered  border-secondary  table-borderless table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th></th>
+                            <th>descripcion</th>
+                            <th>precio</th>
+                            <th>cantidad</th>
+                         
+                          
+                        </tr>
+                    </thead>
+                    <tbody style="border: solid 2px  #34495E;">
+                        <tr style="border: solid 2px  #34495E;" *ngFor="let a of detalles">
+                            <td > <img src='assets/Producto/{{a.elec?.codigoele}}.PNG' class="card-img-top"
+                                onerror="this.src='assets/Producto/descarga.png'" width="100px" height="120px" > 
+                                </td>
+                            <td>{{a.elec?.descripcion}}</td>
+                            <td>S/. {{a.elec?.precio}}</td>
+                            <td>{{a.cantidad}}</td>
+                           
+                           
+
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </div>
+       
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="container-fluid px-4">
+
+    <div class="row">
+        <div class="card mb-4">
+            <div class="card-header" style="background-color: #34495E;border: solid 4px #F5CBA7;">
+                <h2 class="animate__animated animate__backInRight" style="color: white;"><i class="fa-sharp fa-solid fa-clipboard fa-bounce"></i> Historial de Ventas Realizadas </h2>
+            </div>
+            <div class="card-body fondo">
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-4 mt-3">
+                    <thead *ngFor="let e of bol" >
+                   <div class="col">
+                          <div class="card" >       
+                              <div class="card-body bg-dark">
+                                  <table class="table table-bordered border-light" >
+                                     
+                                          <tr>
+                                              <td> <h5 style="color:#39F0EA">NumBoleta:</h5> </td>
+                                              <td> <h5> BO{{e.numeroBoleta}}</h5> </td>
+                                          </tr>
+                                            <tr>
+                                              <td> <h5 style ="color:#39F0EA">Fecha:</h5> </td>
+                                              <td> <h5>{{e.fechaEmision}}</h5> </td>
+                                              
+                                          </tr>
+                                          
+                                            <tr>
+                                              <td> <h5 style="color:#39F0EA">Nombre Cliente:</h5> </td>
+                                              <td> <h5>{{e.cliente?.nombre}} {{e.cliente?.apellido}} </h5> </td>
+                                          </tr>
+                                          <tr>
+                                            <td> <h5 style="color:#39F0EA">DNI :</h5> </td>
+                                            <td> <h5>{{e.cliente?.dni}}</h5> </td>
+                                        </tr>
+                                          <tr>
+                                              <td> <h5 style ="color:#39F0EA">Total:</h5> </td>
+                                              <td> <h5>S/. {{e.monto}}.00</h5> </td>
+                                          </tr>
+                                                                                
+                                  </table>
+                                         
+                                          <div class="text-center">
+                                          <button type="button"  data-bs-toggle="modal" data-bs-target="#registrar" class="btn btn-warning" (click)="listarDetalles(e)">Detalles</button>
+                
+                                          </div>
+                                      
+                              </div>
+                               
+                          </div>
+                      </div>
+                     
+                   </thead>
+              </div>
+                    
+             </div>
+
+            </div>
+        </div>
+    </div>

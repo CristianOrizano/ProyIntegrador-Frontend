@@ -3,7 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Carro } from 'src/app/models/carro.model';
 import { Cliente } from 'src/app/models/cliente.model';
+import { Electro } from 'src/app/models/electro.model';
 import { CarroService } from 'src/app/services/carro.service';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { ElectroService } from 'src/app/services/electro.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,21 +16,24 @@ import Swal from 'sweetalert2';
 })
 export class CarroComponent {
 
-  
+  dtOptions: DataTables.Settings = {};
+  public page!:number;
   public products : Carro[] = [];
 
    //public clie: number=0;
    objcliente: Cliente={
-    codigo:2,
+   
     nombre:"",
     apellido:"",
     dni:"",
-    sexo:"-1",
-    fechanaci:"2021-08-16",
+    sexo:"",
+    
     estado: {
 			estado: 1,	
 		}
   };
+
+  liscliente: Cliente[] = [];
 
   public atri : Carro []=[];
 
@@ -36,7 +42,7 @@ export class CarroComponent {
   public grandTotal : number=0;
   public cantTotal : number=0;
 
-  constructor(private route:ActivatedRoute,private router:Router,private carroser:CarroService){
+  constructor(private route:ActivatedRoute,private router:Router,private carroser:CarroService,private sercli:ClienteService){
   
 
   this.carroser.ObtenerProducts()
@@ -46,6 +52,19 @@ export class CarroComponent {
     this.cantTotal = this.carroser.getCantidaTotal();
   })
 
+
+}
+
+listarCliente(){
+  this.sercli.listaCliente().subscribe((data)=>{
+    this.liscliente= data;
+   
+  });
+}
+
+ //metodo para buscar
+ Buscar(ad :Cliente){
+  this.objcliente =ad;
 }
 
  limpiarcarro(){

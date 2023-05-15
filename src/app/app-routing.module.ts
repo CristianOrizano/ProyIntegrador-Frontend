@@ -11,6 +11,7 @@ import { ProveedorComponent } from './components/proveedor/proveedor.component';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { CompraSeleccComponent } from './components/compra-selecc/compra-selecc.component';
 import { CarroComponent } from './components/carro/carro.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
     {path:'catalogo',component:CatalogoComponent},
     {path:'carro',component:CarroComponent},
     {path: 'comprasel/:idpro', component: CompraSeleccComponent },
+    {path: 'historial', component: HistorialComponent },
    
   ] },
   {path: 'login', component: LoginComponent },

@@ -2,17 +2,18 @@
 
     <div class="row">
         <div class="card mb-4">
-            <div class="card-header">
-                <h2><i class="fas fa-table me-1"></i>Catalogo </h2>
+       
+            <div class="card-header" style="background-color: #34495E;border: solid 4px #F5CBA7;">
+                <h2 style="color: white;"><i class="fa-sharp fa-solid fa-shop"></i> Catalogo</h2>
             </div>
 
-            <div class="card-body">
+            <div class="card-body ggwell">
                 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 ">
                     <tr *ngFor="let e of elec">
                         <div class="col" >
                           <div class="card" >
                           
-                            <img src='assets/Producto/{{e.codigoele}}.PNG' class="card-img-top"
+                            <img src='assets/Producto/{{e.codigoele}}.PNG' class="card-img-top hvr-grow"
                                     onerror="this.src='assets/Producto/descarga.png'" > 
                                     <div class="card-body bg-dark">	
                                     

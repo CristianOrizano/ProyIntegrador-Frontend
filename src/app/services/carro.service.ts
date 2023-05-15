@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Carro } from '../models/carro.model';
 import { HttpClient } from '@angular/common/http';
+import { Boleta } from '../models/boleta.model';
 
 
 const baseURL="https://decorous-control-production.up.railway.app/boleta";
@@ -54,5 +55,10 @@ export class CarroService {
   FinalizarCompra(car:Carro[]):Observable<any>{
     return this.http.post<any>(baseURL,car);
   }
+
+  listarBoleta():Observable<Boleta[]>{
+    return this.http.get<Boleta[]>(baseURL);
+  }
+  
 
 }

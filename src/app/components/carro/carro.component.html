@@ -1,11 +1,67 @@
 
+
+<div class="modal fade" id="registrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content Tay">
+        <div class="modal-header" style="background-color: rgb(31, 148, 33);color: aliceblue;">
+            <h5 class="modal-title" id="exampleModalLabel">Lista de Clientes</h5>
+            <button type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+
+
+            <div class="mt-3">
+                <table class="row-border hover table-bordered  border-secondary  table-borderless table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Dni</th>
+                            <th>Sexo</th>
+                            <th>Fecha Nacimiento</th>
+                            <th></th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody style="border: solid 2px  #34495E;">
+                        <tr style="border: solid 2px  #34495E;" *ngFor="let a of liscliente | paginate: { itemsPerPage: 7, currentPage: page}">
+                            <td >{{a.codigo}}</td>
+                            <td>{{a.nombre}}</td>
+                            <td>{{a.apellido}}</td>
+                            <td>{{a.dni}}</td>
+                            <td>{{a.sexo}}</td>
+                            <td>{{a.fechanaci}}</td>                            
+                            <td>
+                                <a class="btn btn-info editar"  (click)="Buscar(a)">
+                                    <i class="fa-sharp fa-solid fa-pen-to-square"></i>Agregar</a>
+                            </td>
+                           
+
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+            </div>
+       
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+<ng-container *ngIf="products.length !=0">
 <div class="container-fluid px-4 ">
 
     <div class="row ggwel">
         <div class="card mb-4 ggwel">
             
 <div class="container ">
-    <ng-container *ngIf="products.length !=0">
+    
       <!-- BASIC FORM ELELEMNTS -->
   <div style="padding: 20px;">	
 <h3 class="text-center" style="color: white;background: #0C2E43;padding: 15px;border:solid 5px white">Venta Electrodomesticos</h3>	  
@@ -13,31 +69,33 @@
       <div class="row justify-content-evenly  mt-2">
 
 <div class="nini col-sm-12 col-md-12 col-lg-7 col-xl-7" style="padding:15px;border:solid 12px #F7BE81">
+    <form #form="ngForm" >		
         <div class="row g-3">
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <h1 style="color: WHite">Datos del Cliente</h1>
             </div>
 
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <form action="/electro/BuscarCliente" method="post">					
-                    <button type="submit" class="btn btn-danger">
+               		
+                    <button type="button" class="btn btn-primary btn-registrar" (click)="listarCliente()"  data-bs-toggle="modal" data-bs-target="#registrar" class="btn btn-danger">
                         Buscar Cliente
                     </button>
-                     </form>
+                    
             </div>
 
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <div class="form-group">
                    <label for="validationCustom02" class="form-label">Codigo</label>
-                        <input type="text"  #codigo="ngModel" name="codigoo" id="descripcion" [(ngModel)]="objcliente.codigo" class="form-control" placeholder=""
+                        <input type="text" disabled   #codigo="ngModel" required name="codigoo" id="descripcion" [(ngModel)]="objcliente.codigo" class="form-control" placeholder=""
                       aria-label="First name">
             </div>
+            
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <div class="form-group">
                     <label for="validationCustom02" class="form-label">Nombre</label>
                         <input type="text" class="form-control" placeholder=""
-                         th:value="${cli.nombre}"	aria-label="First name">
+                        #nombre="ngModel" disabled name="nombre" id="descripcion" [(ngModel)]="objcliente.nombre"	aria-label="First name">
             </div>
         </div>
            
@@ -45,32 +103,32 @@
             <div class="form-group">
                     <label for="validationCustom02" class="form-label">Apellido</label>
                         <input type="text" class="form-control" placeholder=""
-                         th:value="${cli.apellido}"	aria-label="First name">
+                        #apellido="ngModel"  name="apellido" required id="descripcion" [(ngModel)]="objcliente.apellido"	aria-label="First name">
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <div class="form-group">
                     <label for="validationCustom02" class="form-label">DNI</label>
                         <input type="text" class="form-control" placeholder=""
-                        th:value="${cli.dni}"	aria-label="First name">
+                        #dni="ngModel" disabled name="dni" id="descripcion" [(ngModel)]="objcliente.dni"	aria-label="First name">
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <div class="form-group">
                     <label for="validationCustom02" class="form-label">Sexo</label>
                         <input type="text" class="form-control" placeholder=""
-                         th:value="${cli.sexo}"	aria-label="First name">
+                        #sexo="ngModel" disabled name="sexo" id="descripcion" [(ngModel)]="objcliente.sexo"	aria-label="First name">
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
             <div class="form-group">
                    <label for="validationCustom02" class="form-label">Fecha Nacimiento</label>
                         <input type="text" class="form-control" placeholder=""
-                         th:value="${cli.fecha}"	aria-label="First name">
+                        #fecha="ngModel" disabled name="fecha" id="descripcion" [(ngModel)]="objcliente.fechanaci"	aria-label="First name">
             </div>
         </div>
     </div>
-
+</form>
         
 </div>
 
@@ -115,16 +173,12 @@
         </table>
         <br> <br>   
         
-         <form action="/electro/InsertarBoleta" method="post">
-               
-              <input name="codicli" th:value="${cli.codigo}" type="hidden">
-               
             <div class="d-grid gap-2">
-                <button  (click)="procesarfinalizar()" type="submit" class="btn btn-primary">
+                <button [disabled]="form.invalid" (click)="procesarfinalizar()" type="submit" class="btn btn-primary">
                     Procesar compra
                 </button>
             </div>
-        </form>
+  
 
        
     </div>
@@ -141,7 +195,7 @@
                     <th>Precio</th>
                     <th>Cantidad</th>
                     <th>Importe</th>
-                    <th></th>
+                   
     
                 </tr>
             </thead>
@@ -152,19 +206,10 @@
                                 height="150px"></td>
                 
                     <td >{{item.descripcion}}</td>
-                    <td >{{item.precio}}</td>
+                    <td >S/.{{item.precio}}</td>
                     <td >{{item.cantidad}}</td>
-                    <td >{{item.importe}}</td>
-                    <td>
-                    <form  method="post">
-                        
-                        
-                        <button type="submit" class="btn btn-danger">
-                        Eliminar
-                        </button>
-                    </form>
-                    
-                    </td>
+                    <td >S/.{{item.importe}}</td>
+               
                 </tr>
             </tbody>
         </table>
@@ -173,23 +218,33 @@
 </div>
 </div>
 
+
+</div>
+
+
+</div>
+</div>
+</div>
 </ng-container>
+
+
 
 <ng-container *ngIf="products.length ==0">
-    <div class="container">
-       
-        <div class="center">
+    <div class="container-fluid px-4">
+
+        <div class="row" style="height: 800px;">
+            <div class="card mb-4" style="background:url(assets/imagen/fon5.jpg) center ;">
            
-           
-            <h6>El carrito de compras esta vacio en este momento</h6>
-            
+                <div class="card-body ggwell">
+                    <h1 class="animate__animated animate__backInDown" style="font-size: 180px;margin-top: 180px;text-align: center;"><i class="fa-sharp fa-solid fa-cart-shopping fa-bounce"></i></h1>
+                    <h1 style="font-size: 50px; color: #BB1846; text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Su carro de compras esta vacio.....</h1>
+                 </div>
+    
+                </div>
+            </div>
         </div>
-    </div>
 </ng-container>
 
-</div>
 
 
-</div>
-</div>
-</div>
+
