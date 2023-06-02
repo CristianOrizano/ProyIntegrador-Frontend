@@ -3,7 +3,7 @@
     <div class="row">
         <div class="card mb-4">
        
-            <div class="card-header" style="background-color: #34495E;">
+            <div class="card-header" style="background-color: #34495E;border: solid 4px #F5CBA7;">
                 <h2 style="color: white;"><i class="fa-sharp fa-solid fa-shop"></i> Catalogo</h2>
             </div>
 
@@ -21,7 +21,10 @@
                             <h4 class="card-text text-center text-white">S/.{{e.precio}}.00</h4>
                             <h5  class="card-text text-center text-white">{{e.marca}}</h5>
                             <br>
-                                                                                                  
+                                        <div (click)="agrega(e)" class="text-center">
+                                            <button type="submit"
+                                                class="btn btn-success">Agregar</button>
+                                        </div>                                                              
                             </div>
                             </div>
                         </div>
@@ -33,3 +36,4 @@
             </div>
         </div>
     </div>
+

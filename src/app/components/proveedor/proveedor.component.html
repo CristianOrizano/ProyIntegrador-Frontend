@@ -1,14 +1,12 @@
 <div class="container-fluid px-4">
 
-    <div class="row"  style="border: solid 4px #5499C7;">
+    <div class="row">
         <div class="card mb-4">
             <div class="card-header" style="background-color: #34495E;border: solid 4px #F5CBA7;">
                 <h2 style="color: white;"><i class="fas fa-table me-1"></i>Proveedor </h2>
             </div>
 
             <div class="card-body">
-
-
                 <!-- Button modal -->
                 <button (click)="LimpiarInput()" type="button" class="btn btn-primary btn-registrar" data-bs-toggle="modal" data-bs-target="#registrar">
                     Registrar
@@ -20,7 +18,7 @@
                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content Tay">
-                            <div class="modal-header" style="background-color: rgb(22, 142, 179);color: aliceblue;">
+                            <div class="modal-header" style="background-color: rgb(227, 59, 90);color: aliceblue;">
                                 <h5 class="modal-title" id="exampleModalLabel">Mantenimiento Proveedor</h5>
                                 <button type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
@@ -102,7 +100,7 @@
                                                 <span class="input-group-text" id="basic-addon1"><i
                                                         class="fa-sharp fa-solid fa-user"></i></span>
                                                 <input type="text"  #Descripcion="ngModel" name="Descripcion" id="descripcion" [(ngModel)]="objproveed.descripcion"
-                                                    class="form-control" placeholder="Ingrese Nombre" minlength="4"maxlength="20" required>                                                                                        
+                                                    class="form-control" placeholder="Ingrese Nombre" minlength="4" required>                                                                                        
                                             </div>
                                             <div *ngIf="Descripcion.touched && !Descripcion.valid">                                                     
                                                 <div style="color: red;" *ngIf="Descripcion.errors?.['required']"> El Apellido es obligatorio</div>
@@ -138,14 +136,12 @@
                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content Tay">
-                            <div class="modal-header" style="background-color: rgb(22, 142, 179);color: aliceblue;">
+                            <div class="modal-header" style="background-color: rgb(227, 59, 90);color: aliceblue;">
                                 <h5 class="modal-title" id="exampleModalLabel">Mantenimiento Proveedor</h5>
                                 <button (click)="Cerrar()"  type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-
-
                                 <form (ngSubmit)="ActualizarProveedor()" #form="ngForm">
                                     <div class="row mb-3">
                                         <div class="col-sm-12 col-md-6 col-lg-4">
@@ -220,7 +216,7 @@
                                                 <span class="input-group-text" id="basic-addon1"><i
                                                         class="fa-sharp fa-solid fa-user"></i></span>
                                                 <input type="text"  #Descripcion="ngModel" name="Descripcion" id="descripcion" [(ngModel)]="objproveed.descripcion"
-                                                    class="form-control" placeholder="Ingrese Nombre" minlength="4"maxlength="20" required>                                                                                        
+                                                    class="form-control" placeholder="Ingrese Nombre" minlength="4" required>                                                                                        
                                             </div>
                                             <div *ngIf="Descripcion.touched && !Descripcion.valid">                                                     
                                                 <div style="color: red;" *ngIf="Descripcion.errors?.['required']"> El Apellido es obligatorio</div>
@@ -250,7 +246,7 @@
 
 
                 <div class="mt-3">
-                    <table class="row-border hover table table-dark table-hover table-striped">
+                    <table class="row-border hover table-bordered table-striped  border-secondary  table-borderless table table-hover">
                         <thead class="table-dark">
                             <tr>
                                 <th>Código</th>
@@ -264,7 +260,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let a of lisproveedor | paginate: { itemsPerPage: 10, currentPage: page}">
+                            <tr style="border: solid 2px  rgb(228, 220, 220);" *ngFor="let a of lisproveedor | paginate: { itemsPerPage: 10, currentPage: page}">
                                 <td>{{a.codigo}}</td>
                                 <td>{{a.nombre}}</td>
                                 <td>{{a.dni}}</td>

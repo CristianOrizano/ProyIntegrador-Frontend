@@ -1,9 +1,13 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" >
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" >CyberELectronic</a>
+    <a class="navbar-brand ps-3" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" ><img src="/assets/imagen/icontienda.png" height="50px"> CyberELectronic</a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" ><i class="fas fa-bars"></i></button>
     <!-- Navbar Search sdf-->
+    <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                    
+        <h4 style="color: white;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><img src="/assets/imagen/iconadmin.png" height="60px">Administrador</h4>
+    </div>
     
     <!-- Navbar-->
   
@@ -20,7 +24,7 @@
                     </a>
                     <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Mantenimiento</div>
                     <a class="nav-link collapsed" style="color: #CACFD2; font-family: cursive" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;"  class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;"  class="fa-solid fa-screwdriver-wrench"></i></div>
                         Datos
                         <div class="sb-sidenav-collapse-arrow"><i style="color: #D7DBDD; font-size: 25px;" class="fas fa-angle-down"></i></div>
                     </a>
@@ -31,11 +35,7 @@
                                     <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-user"></i>  </div>
                                 Producto
                             </a>
-                            <a class="nav-link"  style="color: #CACFD2; font-family: cursive" routerLink="/inicio/cliente">
-                                <div class="sb-nav-link-icon"> 
-                                    <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-user"></i>  </div>
-                               Clientes
-                            </a>
+            
                             <a class="nav-link"  style="color: #CACFD2; font-family: cursive" routerLink="/inicio/proveedor">
                                 <div class="sb-nav-link-icon"> 
                                     <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-user"></i>  </div>
@@ -47,14 +47,14 @@
           
                     <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Catalogo</div>
                     <a routerLink="/inicio/catalogo"style="color: #CACFD2; font-family: cursive" class="nav-link" >
-                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;"class="fa-sharp fa-solid fa-image"></i></div>
+                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;" class="fa-solid fa-store"></i></div>
                         Electro catalogo
                     </a>
-                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Carro</div>
-                    <a routerLink="/inicio/carro" 
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Reclamos</div>
+                    <a routerLink="/inicio/reclamos" 
                     style="color: #CACFD2; font-family: cursive" class="nav-link" >
-                        <div class="sb-nav-link-icon"> <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-cart-shopping"></i>  </div>
-                        Carro Compra
+                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;"class="fa-sharp fa-solid fa-users-rectangle"></i> </div>
+                        Reclamos o quejas
                     </a>
                      
                   

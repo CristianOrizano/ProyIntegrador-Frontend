@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Categoria } from '../models/categoria.model';
 
 
+//const baseURL="http://localhost:8091/categoria";
 const baseURL="https://decorous-control-production.up.railway.app/categoria";
 @Injectable({
   providedIn: 'root'

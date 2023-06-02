@@ -61,7 +61,9 @@ listarCliente(){
    
   });
 }
-
+removeItem(item: any){
+  this.carroser.removeCartItem(item);
+}
  //metodo para buscar
  Buscar(ad :Cliente){
   this.objcliente =ad;
@@ -88,7 +90,6 @@ listarCliente(){
     Swal.fire('Correcto',"Transaccion exitosa",'success') 
     this.limpiarcarro()
 
-   
 }
 
 }

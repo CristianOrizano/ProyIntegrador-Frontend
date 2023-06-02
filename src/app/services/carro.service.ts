@@ -6,6 +6,7 @@ import { Boleta } from '../models/boleta.model';
 
 
 const baseURL="https://decorous-control-production.up.railway.app/boleta";
+//const baseURL="http://localhost:8091/boleta";
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +26,14 @@ export class CarroService {
       a.importe= a.cantidad*a.precio;
       
     });
+  }
+  removeCartItem(product: any){
+    this.cartItemList.map((a:any, index:any)=>{
+      if(product.codigopro=== a.codigopro){
+        this.cartItemList.splice(index,1);
+      }
+    })
+    this.productList.next(this.cartItemList);
   }
 
   ObtenerProducts(){
@@ -59,6 +68,7 @@ export class CarroService {
   listarBoleta():Observable<Boleta[]>{
     return this.http.get<Boleta[]>(baseURL);
   }
+
   
 
 }

@@ -1,0 +1,177 @@
+<div class="modal fade" id="registrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content Tay">
+            <div class="modal-header bg-danger" style="color: aliceblue;">
+                <h5 class="modal-title" id="exampleModalLabel">Lista de Clientes</h5>
+                <button type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="mt-3">
+                    <table
+                        class="row-border hover table-bordered  border-secondary  table-borderless table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Dni</th>
+                                <th>Sexo</th>
+                                <th>Fecha Nacimiento</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody style="border: solid 2px  #34495E;">
+                            <tr style="border: solid 2px  #34495E;"
+                                *ngFor="let a of liscliente | paginate: { itemsPerPage: 7, currentPage: page}">
+                                <td>{{a.codigo}}</td>
+                                <td>{{a.nombre}}</td>
+                                <td>{{a.apellido}}</td>
+                                <td>{{a.dni}}</td>
+                                <td>{{a.sexo}}</td>
+                                <td>{{a.fechanaci}}</td>
+                                <td>
+                                    <a class="btn btn-info editar" (click)="Buscar(a)">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                </td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"
+                        nextLabel="Siguiente"></pagination-controls>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid px-4">
+
+    <div class="row ">
+        <div class="card mb-4">
+
+            <div class="card-body ggwell">
+
+                <h2 class="text-center" style="color: white;background: #0C2E43;padding: 15px;border:solid 5px white
+                ;font-family: 'Times New Roman', Times, serif;">Registro Reclamos</h2>	  
+                <div class="row justify-content-evenly  mt-2">
+                    <div class="nini col-sm-12 col-md-12 col-lg-9 col-xl-9"
+                        style="padding:15px;border:solid 12px #F7F9F9;background: white;">
+
+                        <form (ngSubmit)="RegistrarProv()" #form="ngForm" >
+                            <div class="row g-3">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <h1
+                                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                                        <img src="/assets/imagen/soporte.png"> Datos del Cliente</h1>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                                    <button type="button" class="btn btn-warning btn-registrar"
+                                        (click)="listarCliente()" data-bs-toggle="modal" data-bs-target="#registrar">
+                                        <h5><i class="fa-solid fa-magnifying-glass"></i> Buscar</h5>
+                                    </button>
+
+                                </div>
+
+                                <input type="text" hidden #codigo="ngModel" required name="cod"
+                                id="descripcion" [(ngModel)]="objcliente.codigo" class="form-control"
+                                 aria-label="First name">
+
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="form-label">Codigo</label>
+                                        <input type="text" disabled #codigo="ngModel" required name="codigoo"
+                                            id="descripcion" [(ngModel)]="objcliente.codigo" class="form-control"
+                                            placeholder="" aria-label="First name">
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" placeholder="" #nombre="ngModel"
+                                            disabled name="nombre" id="descripcion" [(ngModel)]="objcliente.nombre"
+                                            aria-label="First name">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="form-label">Telefono</label>
+                                        <input type="number" class="form-control" placeholder="" #telefono="ngModel"
+                                            name="telefono" required  [(ngModel)]="objrecla.fono"
+                                            min="100000000" max="999999999" aria-label="First name">
+
+                                    </div>
+                                    <div *ngIf="telefono.touched && !telefono.valid">                                                     
+                                        <div style="color: red;" *ngIf="telefono.errors?.['required']"> El Telefono es obligatorio</div>
+                                        <div style="color: red;" *ngIf="telefono.errors?.['min']"> Minimo 9 digitos </div>
+                                        <div style="color: red;" *ngIf="telefono.errors?.['max']"> Minimo 9 digitos </div>
+     
+                                    </div> 
+
+
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="form-label">DNI</label>
+                                        <input type="text" class="form-control" placeholder="" #dni="ngModel" disabled
+                                            name="dni" id="descripcion" [(ngModel)]="objcliente.dni"
+                                            aria-label="First name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="form-label">Sexo</label>
+                                        <input type="text" class="form-control" placeholder="" #sexo="ngModel" disabled
+                                            name="sexo" id="descripcion" [(ngModel)]="objcliente.sexo"
+                                            aria-label="First name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 ">
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="form-label">Fecha Nacimiento</label>
+                                        <input type="text" class="form-control" placeholder="" #fecha="ngModel" disabled
+                                            name="fecha" id="descripcion" [(ngModel)]="objcliente.fechanaci"
+                                            aria-label="First name">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Especificacion del
+                                        reclamo</label>
+                                    <textarea class="form-control" #reclamo="ngModel" minlength="4" name="reclamo" required [(ngModel)]="objrecla.descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <div *ngIf="reclamo.touched && !reclamo.valid">                                                     
+                                        <div style="color: red;" *ngIf="reclamo.errors?.['required']"> El campo reclamo es obligatorio</div>
+                                        <div style="color: red;" *ngIf="reclamo.errors?.['minlength']"> Min:4 caracteres </div>
+     
+                                    </div> 
+                                </div>
+                              
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button type="submit"  [disabled]="form.invalid"  class="btn text-white" style="background: rgb(37, 174, 224);">Registrar</button>
+                                 
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

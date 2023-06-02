@@ -1,0 +1,79 @@
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" >
+    <!-- Navbar Brand-->
+   <a class="navbar-brand ps-3" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" ><img src="/assets/imagen/icontienda.png" height="50px"> CyberELectronic</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" ><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search sdf-->
+    <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"style="text-align: center">
+                    
+        <h4 style="color: white;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><img src="/assets/imagen/vende2.png">Vendedor</h4>
+    </div>
+    <!-- Navbar-->
+  
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav" style="border-right: solid 10px #242729;">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu" >
+                <div class="nav">
+                  
+                
+                <div class="sb-sidenav-menu-heading" style="color: #43D9F4;" >Principal</div>
+                    <a routerLink="/iniicio/" style="color: #CACFD2;  font-family: cursive" class="nav-link" >
+                        <div class="sb-nav-link-icon"> <i style="color: #D7DBDD;  font-size: 25px;" class="fa-sharp fa-solid fa-house"></i></div>
+                        Inicio
+                    </a>
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Mantenimiento</div>
+                    <a class="nav-link"  style="color: #CACFD2; font-family: cursive" routerLink="/iniicio/cliente">
+                        <div class="sb-nav-link-icon"> 
+                            <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-user"></i>  </div>
+                       Clientes
+                    </a>
+                  
+          
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Catalogo</div>
+                    <a routerLink="/iniicio/catalogo"style="color: #CACFD2; font-family: cursive" class="nav-link" >
+                        <div class="sb-nav-link-icon"><i style="color: #D7DBDD; font-size: 25px;" class="fa-solid fa-store"></i> </div>
+                        Electro catalogo
+                    </a>
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Carro</div>
+                    <a routerLink="/iniicio/carro" 
+                    style="color: #CACFD2; font-family: cursive" class="nav-link" >
+                        <div class="sb-nav-link-icon"> <i style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-cart-shopping"></i>  </div>
+                        Carro Compra
+                    </a>
+                     
+                  
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Reclamos</div>
+                    <a routerLink="/iniicio/reclamos"  class="nav-link" style="color: #CACFD2; font-family: cursive">
+                        <div class="sb-nav-link-icon"> <i  style="color: #D7DBDD; font-size: 25px;" class="fa-sharp fa-solid fa-list-ol"></i></div>
+                       Registrar Reclamos
+                    </a>
+  
+                    <div class="sb-sidenav-menu-heading" style="color: #43D9F4;">Sesion</div>
+                    <a routerLink="/login"  class="nav-link" style="color: #CACFD2; font-family: cursive">
+                        <div class="sb-nav-link-icon"><i  style="color: #D7DBDD; font-size: 25px;"class="fa-sharp fa-solid fa-right-from-bracket"></i></div>
+                        Cerrar 
+                    </a>
+
+                   
+                   
+                    
+                </div>
+            </div>
+           
+        </nav>
+    </div>
+  
+    <div id="layoutSidenav_content">
+        <main>
+
+            <router-outlet></router-outlet>
+        </main>
+      
+    </div>
+  </div>
+  
+  
+  <!--stilos plantilla -->
+    <script href="assets/js/script"></script>

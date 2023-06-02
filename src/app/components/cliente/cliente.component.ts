@@ -27,7 +27,7 @@ export class ClienteComponent implements OnInit{
     apellido:"",
     dni:"",
     sexo:"-1",
-    fechanaci:"2021-08-16",
+    fechanaci:"2002-08-16",
     estado: {
 			estado: 1,	
 		}
@@ -56,7 +56,7 @@ export class ClienteComponent implements OnInit{
         (x)=>{         
            Swal.fire('Registro Correcto',"Exito al registrar",'success') 
            this.LimpiarInput();
-           this.router.navigate(['inicio/cliente']);
+           this.router.navigate(['iniicio/cliente']);
            this.listarCliente();
 
         }      
@@ -81,7 +81,7 @@ export class ClienteComponent implements OnInit{
           apellido:"",
           dni:"",
           sexo:"-1",
-          fechanaci:"2021-08-16",
+          fechanaci:"2002-08-16",
           estado: {
             estado: 1,	
           }

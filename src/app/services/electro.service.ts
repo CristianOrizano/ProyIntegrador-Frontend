@@ -5,6 +5,7 @@ import { Electro } from '../models/electro.model';
 
 
 const baseURL="https://decorous-control-production.up.railway.app/electro";
+//const baseURL="http://localhost:8091/electro";
 @Injectable({
   providedIn: 'root'
 })

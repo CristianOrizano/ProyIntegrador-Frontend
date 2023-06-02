@@ -12,6 +12,11 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { CompraSeleccComponent } from './components/compra-selecc/compra-selecc.component';
 import { CarroComponent } from './components/carro/carro.component';
 import { HistorialComponent } from './components/historial/historial.component';
+import { PrincipaldosComponent } from './components/principaldos/principaldos.component';
+import { CatalogodosComponent } from './components/catalogodos/catalogodos.component';
+import { CompraselecdosComponent } from './components/compraselecdos/compraselecdos.component';
+import { ReclamosComponent } from './components/reclamos/reclamos.component';
+import { ListareclamoComponent } from './components/listareclamo/listareclamo.component';
 
 
 const routes: Routes = [
@@ -22,8 +27,20 @@ const routes: Routes = [
     {path:'cliente',component:ClienteComponent},
     {path:'proveedor',component:ProveedorComponent},
     {path:'catalogo',component:CatalogoComponent},
-    {path:'carro',component:CarroComponent},
+    {path:'reclamos',component:ListareclamoComponent},
     {path: 'comprasel/:idpro', component: CompraSeleccComponent },
+    {path: 'historial', component: HistorialComponent },
+   
+  ] },
+
+  {path:'iniicio', component: PrincipaldosComponent,
+  children:[
+    {path:'',component:InicioComponent},
+    {path:'catalogo',component:CatalogodosComponent},
+    {path:'cliente',component:ClienteComponent},
+    {path:'carro',component:CarroComponent},
+    {path:'reclamos',component:ReclamosComponent},
+    {path: 'comprasel/:idpro', component: CompraselecdosComponent },
     {path: 'historial', component: HistorialComponent },
    
   ] },

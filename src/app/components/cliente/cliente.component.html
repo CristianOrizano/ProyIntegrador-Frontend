@@ -1,6 +1,6 @@
 <div class="container-fluid px-4">
 
-    <div class="row" style="border: solid 4px #5499C7;">
+    <div class="row" >
         <div class="card mb-4">
             <div class="card-header" style="background-color: #34495E;border: solid 4px #F5CBA7;">
                 <h2 style="color: white;"><i class="fa-sharp fa-solid fa-user"></i> Clientes </h2>
@@ -20,7 +20,7 @@
                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content Tay">
-                            <div class="modal-header" style="background-color: rgb(179, 22, 75);color: aliceblue;">
+                            <div class="modal-header" style="background-color: rgb(15, 97, 164);color: aliceblue;">
                                 <h5 class="modal-title" id="exampleModalLabel">Mantenimiento Cliente</h5>
                                 <button type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
@@ -136,7 +136,7 @@
                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content Tay">
-                            <div class="modal-header" style="background-color: rgb(179, 22, 75);color: aliceblue;">
+                            <div class="modal-header" style="background-color: rgb(15, 97, 164);color: aliceblue;">
                                 <h5 class="modal-title" id="exampleModalLabel">Mantenimiento Cliente</h5>
                                 <button (click)="Cerrar()"  type="button" id="cerrarr" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
@@ -259,7 +259,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody style="border: solid 2px  #34495E;">
+                        <tbody>
                             <tr style="border: solid 2px  rgb(228, 220, 220);" *ngFor="let a of liscliente | paginate: { itemsPerPage: 10, currentPage: page}">
                                 <td >{{a.codigo}}</td>
                                 <td>{{a.nombre}}</td>

@@ -1,0 +1,73 @@
+
+<div class="container-fluid px-4">
+
+    <div class="row"  style="height: 920px;">
+        <div class="card mb-4"  style="background:url(assets/imagen/fon3.jpg) center ;">
+       
+
+<div class="container">
+<div class="row justify-content-center" style="margin-top:150px">
+    <div class="col-sm-12 col-md-11 col-lg-11 col-xl-8"
+        style="background: white; border: solid 10px rgb(59, 155, 181); box-shadow: rgb(81, 196, 202) 10px 5px 35px;padding: 10px;">
+        <h1 style="text-align: center; color: #de4e4e;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Detalle compra</h1>
+    
+        <table>
+            <tr>
+                <td><img alt="" class="img-fluid" src='assets/Producto/{{compra.codigoele}}.PNG' width="500px" height="500px"></td>
+                <td style="padding: 30px">
+                    <h3 style="color: #0d7b91;">{{compra.cate?.nombre}}</h3>
+            
+                    <hr>
+                    <h2 style="color: green">{{compra.descripcion}}</h2>
+                    <form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h5>Marca :</h5>
+                                </td>
+                                <td>
+                                    <h3 style="color: #585858">{{compra.marca}}</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Precio:</h5>
+                                </td>
+                                <td>
+                                    <h4>S/.{{compra.precio}}.00</h4>
+                                </td>
+            
+            
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Cantidad:</h5>
+                                </td>
+                                <td><input  [(ngModel)]="cantidad"  type="number" value="1" name="cantidad" min="1" max={{compra.stock}}></td>
+                            </tr>
+            
+                        </table>
+            
+                     
+                    </form>
+                    <hr>
+            
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary btn-lg btn-color hvr-pulse-grow" (click)="addtocart()" >Agregar
+                            compra</button>
+                    </div>
+                </td>
+            
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+

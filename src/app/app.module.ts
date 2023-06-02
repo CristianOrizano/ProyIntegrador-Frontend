@@ -19,6 +19,11 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { CompraSeleccComponent } from './components/compra-selecc/compra-selecc.component';
 import { CarroComponent } from './components/carro/carro.component';
 import { HistorialComponent } from './components/historial/historial.component';
+import { PrincipaldosComponent } from './components/principaldos/principaldos.component';
+import { CatalogodosComponent } from './components/catalogodos/catalogodos.component';
+import { CompraselecdosComponent } from './components/compraselecdos/compraselecdos.component';
+import { ReclamosComponent } from './components/reclamos/reclamos.component';
+import { ListareclamoComponent } from './components/listareclamo/listareclamo.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { HistorialComponent } from './components/historial/historial.component';
     CatalogoComponent,
     CompraSeleccComponent,
     CarroComponent,
-    HistorialComponent
+    HistorialComponent,
+    PrincipaldosComponent,
+    CatalogodosComponent,
+    CompraselecdosComponent,
+    ReclamosComponent,
+    ListareclamoComponent
   ],
   imports: [
     BrowserModule,
