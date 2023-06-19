@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Proveedor } from '../models/proveedor.model';
 
 
-const baseURL="https://decorous-control-production.up.railway.app/proveedor";
+const baseURL="https://hilarious-trip-production.up.railway.app/proveedor";
 //const baseURL="http://localhost:8091/proveedor";
 @Injectable({
   providedIn: 'root'

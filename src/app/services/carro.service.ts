@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Boleta } from '../models/boleta.model';
 
 
-const baseURL="https://decorous-control-production.up.railway.app/boleta";
+const baseURL="https://hilarious-trip-production.up.railway.app/boleta";
 //const baseURL="http://localhost:8091/boleta";
 @Injectable({
   providedIn: 'root'
